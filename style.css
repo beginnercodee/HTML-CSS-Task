@@ -1,91 +1,133 @@
-*{
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    background-image: url(https://images.squarespace-cdn.com/content/v1/58449af546c3c4f2f7e98db3/1702917625450-1UQB0P8S63761Y7Y17QB/20231026%252BTed%252BX%252B68%252B%2525283%252529.jpg);
-    height: 100vh;
+body {
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(https://images.squarespace-cdn.com/content/v1/58449af546c3c4f2f7e98db3/1702917625450-1UQB0P8S63761Y7Y17QB/20231026%252BTed%252BX%252B68%252B%2525283%252529.jpg);
+    min-height: 100vh;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.navbar{
+.main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
     width: 80%;
     margin: auto;
+    padding-top: 20px;
 }
 
-.logo-navs{
+.logo-navs {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    list-style: none;
     text-transform: uppercase;
+}
+
+.logo-navs li a {
+    text-decoration: none;
     color: white;
-    text-decoration-line: underline;
-    text-underline-offset: calc(10px);
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
 }
 
-.logo-navs:hover{
-    text-decoration-line: none;
-    background: red;
+.logo-navs li a:hover {
+    color: #e62b1e;
+    border-bottom: 2px solid #e62b1e;
 }
 
-img{
+.logo-navs .logo img {
     width: 150px;
-    height: 100px;
+    height: auto;
+    display: block;
 }
 
-hr{
-    width: 100%;
+.logo-navs .register a {
+    border: 2px solid #e62b1e;
+    padding: 10px 20px;
+    background-color: #e62b1e;
+    border-radius: 5px;
 }
 
-.body{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    width: 30%;
-    margin-top: 300px;
-    font-size: xx-large;
-    text-align: center;
-}
-
-h1, h3, h5{
+.logo-navs .register a:hover {
+    background-color: transparent;
     color: white;
+    border-bottom: 2px solid #e62b1e;
 }
 
-h3{
-    text-transform: uppercase;
+hr {
+    width: 80%;
+    margin: 20px auto;
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-span{
-    color: red;
-}
-
-@media (min-width: 360px) and (max-width: 450px) {
-    .body{
+.hero {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: auto;
+    text-align: center;
+    flex-grow: 1; 
     width: 100%;
-    margin-top: 300px;
-    font-size: xx-large;
-}
 }
 
-@media (min-width: 450px) and (max-width: 1280px) {
-    .body{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    width: 40%;
-    margin-top: 300px;
-    font-size: xx-large;
+.hero-content {
+    max-width: 600px;
 }
+
+.hero h1 {
+    font-size: 4rem;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.hero h3, .hero h5 {
+    color: #ddd;
+    font-weight: normal;
+    margin: 5px 0;
+}
+
+span {
+    color: #e62b1e;
+}
+
+@media (max-width: 900px) {
+    .navbar {
+        width: 95%;
+    }
+    
+    .logo-navs {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .hero h1 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .logo-navs img {
+        width: 120px;
+    }
+
+    .logo-navs li a {
+        font-size: 12px;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
 }
